@@ -1,0 +1,10 @@
+Function,Description
+print,returns a brief summary
+summary,returns a detailed summary 
+df.residual,returns the number of residual degrees of freedom 
+coef,returns the estimated coefficients (sometimes with their standard-errors) 
+residuals,returns the residuals 
+deviance,returns the deviance 
+fitted,returns the fitted values 
+logLik,computes the logarithm of the likelihood and the number of parameters 
+AIC,computes the Akaike information criterion or AIC (depends on logLik())

@@ -1,0 +1,13 @@
+slides > slide {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+
+.myHead {
+  color: black;
+  margin-top: 100px;
+  text-align: center;
+  padding-top: 100;
+  font-size: 72px;
+}

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1570587115741.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1633925209",
+    "id" : "40D6549B",
+    "lastKnownWriteTime" : 1570591775,
+    "last_content_update" : 1570591775122,
+    "path" : "C:/Users/Ahmad Abdel-Azim/Desktop/Class-film-revision717/Class-film-revision717/SCRIPT.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "16,1",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

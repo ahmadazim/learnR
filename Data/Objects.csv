@@ -1,0 +1,8 @@
+Object,Modes,Several modes possible?
+vector,"numeric, character, complex, or logical",No
+factor,numeric or character,No
+array ,"numeric, character, complex, or logical",No
+matrix ,"numeric, character, complex, or logical",No
+data frame,"numeric, character, complex, or logical",Yes
+ts ,"numeric, character, complex, or logical",No 
+list,"numeric, character, complex, logical, function, expression, …",Yes

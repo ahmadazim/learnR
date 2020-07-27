@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1545570107405.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "351855210",
+    "id" : "FA3270C0",
+    "lastKnownWriteTime" : 1550965013,
+    "last_content_update" : 1550965013,
+    "path" : "~/Research/TeachSalma/Rbasics/MarkdownPresent.Rmd",
+    "project_path" : "MarkdownPresent.Rmd",
+    "properties" : {
+        "cursorPosition" : "147,10",
+        "scrollLine" : "119",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -1,0 +1,54 @@
+workDir <- "C:/Users/Ahmad Abdel-Azim/Desktop/Class-film-revision717/Class-film-revision717/"
+files <- list.files(workDir)
+firstData <- read.csv(paste0(workDir, files[1]), header = FALSE)
+colnames(firstData) <- c("wv","ab")
+colors <- rep(c("red", "blue", "green", "black"), 37)
+lw = 1.5
+
+png(paste0(workDir, "allData.png"), units = "in", width = 10, height = 6, res = 600)
+plot(firstData$wv, firstData$ab, main = "Absorbance vs. Wavelength for Multiple Sunscreens", 
+     xlab = "Wavelength (nm)", ylab = "Absorbance", ylim = c(0,3.1), xlim = c(200,870), type = "l", lwd = lw, col = "orange")
+
+for(i in 2:length(files)){
+  data <- read.csv(paste0(workDir, files[i]), header = FALSE)
+  colnames(data) <- c("wv","ab")
+  cat("Data loaded and ready for plotting :)", "\n")
+  points(data$wv, data$ab, type = "l", lwd = lw, col = colors[i])
+}
+dev.off()
+
+
+# AVERAGING BY BRAND/TYPE
+brandNum <- cumsum(as.numeric(table(substr(files, 1, 5))))
+
+png(paste0(workDir, "average.png"), units = "in", width = 10, height = 6, res = 600)
+fileNames1 <- files[1:6]
+data1 <- read.csv(paste0(workDir, fileNames1[1]), header = FALSE)
+colnames(data1) <- c("wv", "ab1")
+for(j in 2:length(fileNames1)){
+  x <- read.csv(paste0(workDir, fileNames1[j]), header = FALSE)
+  colnames(x) <- c("wv", paste0("ab",j))
+  data1 <- merge(data1, x, by = "wv", all = TRUE)
+  cat("ran", "\n")
+}
+abAvg1 <- rowMeans(data1[,2:7], na.rm = TRUE)
+avgdata1 <- data.frame(WV = data1$wv, avgAB = abAvg1)
+plot(avgdata1$WV, avgdata1$avgAB, main = "Average Absorbance vs. Wavelength Among Sunscreen Types", 
+     xlab = "Wavelength (nm)", ylab = "Absorbance", ylim = c(0,2), xlim = c(200,870), type = "l", lwd = lw, col = "orange")
+
+
+for(i in 2:24){
+  fileNames <- files[(brandNum[(i-1)]+1): brandNum[i]]
+  data <- read.csv(paste0(workDir, fileNames[1]), header = FALSE)
+  colnames(data) <- c("wv", "ab1")
+  for(j in 2:length(fileNames)){
+    x <- read.csv(paste0(workDir, fileNames[j]), header = FALSE)
+    colnames(x) <- c("wv", paste0("ab",j))
+    data <- merge(data, x, by = "wv", all = TRUE)
+  }
+  abAvg <- rowMeans(data[,2:(length(fileNames)+1)], na.rm = TRUE)
+  avgData <- data.frame(WV = data$wv, avgAB = abAvg)
+  points(avgData$WV, avgData$avgAB, type = "l", lwd = lw, col = colors[i])
+  cat(c("done with ", i, "\n"))
+}
+dev.off()
